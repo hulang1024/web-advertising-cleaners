@@ -25,14 +25,13 @@
     allIframes().forEach(function(iframe){
       try {
         iframe.style.visibility = 'hidden';
-        iframe.parentElement.style.visibility = 'hidden';
+        if (iframe.parentElement != document.body) {
+          iframe.parentElement.style.visibility = 'hidden';
+        }
         iframe.src = '';
-        var clearHTML = function() {
-          iframe.contentWindow.document.body.innerHTML = '';
-        };
-        clearHTML();
+        iframe.contentWindow.document.body.innerHTML = '';
         iframe.addEventListener('load', function() {
-          clearHTML();
+          iframe.contentWindow.document.body.innerHTML = '';
         });
       } catch(e) {}
     });

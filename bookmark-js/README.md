@@ -2,7 +2,7 @@
 
 ## 方式1
 在浏览器地址栏输入:
-`javascript:`，接着js脚本，如：
+`javascript:`，接着js代码，如：
 ```js
 javascript: alert('test')
 ```
